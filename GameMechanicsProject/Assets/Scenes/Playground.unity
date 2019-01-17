@@ -480,7 +480,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bigCam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 881857968}
     - target: {fileID: 2730343356962375053, guid: cf7eab046cc5e6f449724a1ab288bd7a,
         type: 3}
       propertyPath: lilBro
