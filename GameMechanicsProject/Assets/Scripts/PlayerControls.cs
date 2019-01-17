@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -40,6 +38,8 @@ public class PlayerControls : MonoBehaviour
 			canJump = true;
 		}
 	}
+
+
 
 }
 
