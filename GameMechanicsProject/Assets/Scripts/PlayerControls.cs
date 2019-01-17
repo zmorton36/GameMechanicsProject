@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	private bool bigBool, littleBool;
     public Camera bigCam, lilCam;
+    public Collider lilBro, bigBro;
 
 	// Start is called before the first frame update
 	void Start()
@@ -19,6 +20,9 @@ public class PlayerControls : MonoBehaviour
 		rb = gameObject.GetComponent<Rigidbody>();
 		littleBool = true;
 		bigBool = false;
+
+        //Ignore collision between players
+        Physics.IgnoreCollision(lilBro, bigBro);
 	}
 
 	// Update is called once per frame

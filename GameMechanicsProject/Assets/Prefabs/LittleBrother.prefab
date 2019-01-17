@@ -112,6 +112,10 @@ MonoBehaviour:
   speed: 3
   bigBool: 0
   littleBool: 0
+  bigCam: {fileID: 0}
+  lilCam: {fileID: 2730343357089306178}
+  lilBro: {fileID: 2730343356962375042}
+  bigBro: {fileID: 0}
 --- !u!54 &2730343356962375046
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,7 +144,7 @@ GameObject:
   - component: {fileID: 2730343357089306178}
   - component: {fileID: 2730343357089306189}
   m_Layer: 0
-  m_Name: PlayerCamera
+  m_Name: LittleCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
