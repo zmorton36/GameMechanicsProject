@@ -59,7 +59,7 @@ public class PlayerControls : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Wall")
+		if (collision.gameObject.tag == "Floor")
 		{
 			canJump = true;
 		}
