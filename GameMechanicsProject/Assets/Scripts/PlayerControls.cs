@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
 	public float speed;
 	[SerializeField]
 	private bool bigBool, littleBool;
+    public Camera bigCam, lilCam;
 
 	// Start is called before the first frame update
 	void Start()
@@ -37,10 +38,18 @@ public class PlayerControls : MonoBehaviour
 			}
 		}
 		if (littleBool && gameObject.tag == "LittleBrother")
-			littleMove();
+        {
+            littleMove();
+            lilCam.gameObject.SetActive(true);
+            bigCam.gameObject.SetActive(false);
+        }
 
 		if (bigBool && gameObject.tag == "BigBrother")
-			bigMove();
+        {
+            bigMove();
+            lilCam.gameObject.SetActive(false);
+            bigCam.gameObject.SetActive(true);
+        }
 
 	}
 
