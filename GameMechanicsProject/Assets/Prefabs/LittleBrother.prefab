@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2730343356962375053}
   - component: {fileID: 2730343356962375046}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: LittleBrother
+  m_TagString: LittleBrother
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   canJump: 0
   jump: 400
   speed: 3
+  bigBool: 0
+  littleBool: 0
 --- !u!54 &2730343356962375046
 Rigidbody:
   m_ObjectHideFlags: 0
