@@ -78,6 +78,7 @@ public class PlayerControls : MonoBehaviour
             if (canHold == true)
             {
                 heldItem = collision.gameObject;
+                heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
         else
@@ -108,6 +109,12 @@ public class PlayerControls : MonoBehaviour
         {
             heldItem.transform.parent = transform;
             //canHold = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && canHold == false)
+        {
+            heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            heldItem.transform.parent = null;
+
         }
     }
 }
