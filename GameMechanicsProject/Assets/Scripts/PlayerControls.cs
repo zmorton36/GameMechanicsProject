@@ -10,7 +10,9 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	public float speed;
 	[SerializeField]
-	private bool bigBool, littleBool;
+	private bool bigBool, littleBool, canHold;
+    [SerializeField]
+    private GameObject heldItem;
     public Camera bigCam, lilCam;
     public Collider lilBro, bigBro;
 
@@ -59,13 +61,33 @@ public class PlayerControls : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == "Floor")
+        //Checking if player is on the ground to jump
+        if (collision.gameObject.tag == "Floor")
 		{
 			canJump = true;
 		}
+      
 	}
 
-	private void littleMove()
+    private void OnCollisionStay(Collision collision)
+    {
+        //Checking if player can grab objects
+        if (collision.gameObject.tag == "Grabbable")
+        {
+            canHold = true;
+            if (canHold == true)
+            {
+                heldItem = collision.gameObject;
+            }
+        }
+        else
+        {
+            canHold = false;
+            heldItem = null;
+        }
+    }
+
+    private void littleMove()
 	{
 		Vector3 horizontal = gameObject.transform.right;
 		rb.velocity = (Input.GetAxis("Horizontal") * horizontal * speed) + new Vector3(0, rb.velocity.y, 0);
@@ -81,7 +103,13 @@ public class PlayerControls : MonoBehaviour
 	{
 		Vector3 horizontal = gameObject.transform.right;
 		rb.velocity = (Input.GetAxis("Horizontal") * horizontal * speed) + new Vector3(0, rb.velocity.y, 0);
-	}
+
+        if (Input.GetKeyDown(KeyCode.Space) && canHold == true)
+        {
+            heldItem.transform.parent = transform;
+            //canHold = false;
+        }
+    }
 }
 
 
