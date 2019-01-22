@@ -22,7 +22,7 @@ public class PlayerControls : MonoBehaviour
 		rb = gameObject.GetComponent<Rigidbody>();
 		littleBool = true;
 		bigBool = false;
-
+		
         //Ignore collision between players
         Physics.IgnoreCollision(lilBro, bigBro);
 	}
@@ -61,31 +61,28 @@ public class PlayerControls : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        //Checking if player is on the ground to jump
-        if (collision.gameObject.tag == "Floor")
+		if (collision.gameObject.tag == "Grabbable")
+		{
+			canHold = true;
+			if (canHold == true)
+			{
+				heldItem = collision.gameObject;
+				heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+			}
+		}
+		else
+		{
+			canHold = false;
+			heldItem = null;
+		}
+
+		//Checking if player is on the ground to jump
+		if (collision.gameObject.tag == "Floor")
 		{
 			canJump = true;
 		}
       
 	}
-
-    private void OnCollisionStay(Collision collision)
-    {
-        //Checking if player can grab objects
-        if (collision.gameObject.tag == "Grabbable")
-        {
-            canHold = true;
-            if (canHold == true)
-            {
-                heldItem = collision.gameObject;
-            }
-        }
-        else
-        {
-            canHold = false;
-            heldItem = null;
-        }
-    }
 
     private void littleMove()
 	{
@@ -107,7 +104,14 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canHold == true)
         {
             heldItem.transform.parent = transform;
-            //canHold = false;
+			canHold = false;
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && canHold == false)
+        {
+            heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            heldItem.transform.parent = null;
+			
         }
     }
 }
