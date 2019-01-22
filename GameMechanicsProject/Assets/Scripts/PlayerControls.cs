@@ -2,21 +2,23 @@
 
 public class PlayerControls : MonoBehaviour
 {
-	private Rigidbody rb;
+	
+	private Rigidbody rb, rbItem;
 	[SerializeField]
 	private bool canJump;
 	[SerializeField]
-	private float jump = 400;
+	private float jump = 400,force = 100;
 	[SerializeField]
 	public float speed;
 	[SerializeField]
 	private bool bigBool, littleBool, canHold;
     [SerializeField]
-    private GameObject heldItem, Targeter, Arrow = null;
+    private GameObject heldItem, Arrow = null;
 	[SerializeField]
 	private Transform playerPosition;
     public Camera bigCam, lilCam;
-    public Collider lilBro, bigBro;
+    public Collider lilBro, bigBro, heldCol;
+	private float trajectory;
 
 	// Start is called before the first frame update
 	void Start()
@@ -24,11 +26,12 @@ public class PlayerControls : MonoBehaviour
 		rb = gameObject.GetComponent<Rigidbody>();
 		littleBool = true;
 		bigBool = false;
-
-		if(gameObject.tag == "BigBrother")
-		{
-			playerPosition = GetComponent<Transform>();
-		}
+		Arrow.SetActive(false);
+		
+		
+	
+		playerPosition = GetComponent<Transform>();
+		
 		
         //Ignore collision between players
         Physics.IgnoreCollision(lilBro, bigBro);
@@ -64,24 +67,34 @@ public class PlayerControls : MonoBehaviour
             bigCam.gameObject.SetActive(true);
         }
 
+		if (Input.GetKeyDown(KeyCode.Space) && canHold == false && rbItem != null)
+		{
+
+
+			heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+			rbItem.AddForce(new Vector3(trajectory * force, trajectory * force, 0));
+			heldItem.transform.parent = null;
+			Arrow.SetActive(false);
+			heldCol = null;
+			heldItem = null;
+			rbItem = null;
+		}
+
+	}
+
+	private void Update()
+	{
+		trajectory = Vector3.Dot(gameObject.transform.right, Arrow.transform.right);
+		//Debug.Log(trajectory);
 	}
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == "Grabbable")
-		{
-			canHold = true;
-			if (canHold == true)
-			{
-				heldItem = collision.gameObject;
-				heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-			}
-		}
-		else
+		/*else
 		{
 			canHold = false;
 			heldItem = null;
-		}
+		}*/
 
 		//Checking if player is on the ground to jump
 		if (collision.gameObject.tag == "Floor")
@@ -91,7 +104,32 @@ public class PlayerControls : MonoBehaviour
       
 	}
 
-    private void littleMove()
+	private void OnCollisionStay(Collision collision)
+	{
+
+		if (gameObject.tag == "BigBrother" && collision.gameObject.tag == "Grabbable")
+		{
+			if (heldItem == null && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Space)))
+			{
+
+				heldItem = collision.gameObject;
+				heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+				if (heldItem.transform.position.x > transform.position.x) {
+					heldItem.transform.Translate(0.1f, 0, 0);
+				}
+				else {
+					heldItem.transform.Translate(-0.1f, 0, 0);
+				}
+
+				heldItem.transform.parent = gameObject.transform;
+				heldCol = heldItem.GetComponent<Collider>();
+				rbItem = heldItem.gameObject.GetComponent<Rigidbody>();
+				Arrow.SetActive(true);
+			}
+		}
+	}
+
+	private void littleMove()
 	{
 		Vector3 horizontal = gameObject.transform.right;
 		rb.velocity = (Input.GetAxis("Horizontal") * horizontal * speed) + new Vector3(0, rb.velocity.y, 0);
@@ -107,22 +145,20 @@ public class PlayerControls : MonoBehaviour
 	{
 		Vector3 horizontal = gameObject.transform.right;
 		rb.velocity = (Input.GetAxis("Horizontal") * horizontal * speed) + new Vector3(0, rb.velocity.y, 0);
-
-        if (Input.GetKeyDown(KeyCode.Space) && canHold == true)
-        {
-            heldItem.transform.parent = transform;
-			Targeter = Instantiate(Arrow, playerPosition.transform.position + (playerPosition.transform.right * 3), Quaternion.Euler(new Vector3(0, 0, 90)));
-			Targeter.transform.parent = transform;
-			canHold = false;
-            
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && canHold == false)
-        {
-            heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            heldItem.transform.parent = null;
-			Destroy(Targeter);
-        }
+		
+		if (heldItem != null)
+		{
+			Aim();
+		}
     }
+
+	private void Aim()
+	{
+		if (Input.GetKey(KeyCode.W))
+		{
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 20);
+		}
+	}
 }
 
 

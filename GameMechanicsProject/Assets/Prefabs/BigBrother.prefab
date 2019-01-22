@@ -207,9 +207,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canJump: 0
   jump: 400
-  speed: 3
+  speed: 2.5
   bigBool: 0
   littleBool: 0
+  canHold: 0
+  heldItem: {fileID: 0}
+  Arrow: {fileID: 6882461859321446369, guid: d52d460a3b0304145921fabff72592b2, type: 3}
+  playerPosition: {fileID: 0}
   bigCam: {fileID: 1056988818}
   lilCam: {fileID: 0}
   lilBro: {fileID: 0}
