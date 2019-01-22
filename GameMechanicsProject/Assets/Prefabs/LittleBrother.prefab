@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2730343356962375041
 Transform:
   m_ObjectHideFlags: 0
@@ -112,6 +112,10 @@ MonoBehaviour:
   speed: 3
   bigBool: 0
   littleBool: 0
+  canHold: 0
+  heldItem: {fileID: 0}
+  Arrow: {fileID: 0}
+  playerPosition: {fileID: 0}
   bigCam: {fileID: 0}
   lilCam: {fileID: 2730343357089306178}
   lilBro: {fileID: 2730343356962375042}
