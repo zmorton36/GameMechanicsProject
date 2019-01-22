@@ -111,7 +111,7 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canHold == true)
         {
             heldItem.transform.parent = transform;
-			Targeter = Instantiate(Arrow, playerPosition.transform.position + (playerPosition.transform.right * 2), Quaternion.Euler(new Vector3(0, 0, 90)));
+			Targeter = Instantiate(Arrow, playerPosition.transform.position + (playerPosition.transform.right * 3), Quaternion.Euler(new Vector3(0, 0, 90)));
 			Targeter.transform.parent = transform;
 			canHold = false;
             
