@@ -12,7 +12,9 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	private bool bigBool, littleBool, canHold;
     [SerializeField]
-    private GameObject heldItem;
+    private GameObject heldItem, Targeter, Arrow = null;
+	[SerializeField]
+	private Transform playerPosition;
     public Camera bigCam, lilCam;
     public Collider lilBro, bigBro;
 
@@ -23,6 +25,11 @@ public class PlayerControls : MonoBehaviour
 		littleBool = true;
 		bigBool = false;
 
+		if(gameObject.tag == "BigBrother")
+		{
+			playerPosition = GetComponent<Transform>();
+		}
+		
         //Ignore collision between players
         Physics.IgnoreCollision(lilBro, bigBro);
 	}
@@ -61,32 +68,28 @@ public class PlayerControls : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        //Checking if player is on the ground to jump
-        if (collision.gameObject.tag == "Floor")
+		if (collision.gameObject.tag == "Grabbable")
+		{
+			canHold = true;
+			if (canHold == true)
+			{
+				heldItem = collision.gameObject;
+				heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+			}
+		}
+		else
+		{
+			canHold = false;
+			heldItem = null;
+		}
+
+		//Checking if player is on the ground to jump
+		if (collision.gameObject.tag == "Floor")
 		{
 			canJump = true;
 		}
       
 	}
-
-    private void OnCollisionStay(Collision collision)
-    {
-        //Checking if player can grab objects
-        if (collision.gameObject.tag == "Grabbable")
-        {
-            canHold = true;
-            if (canHold == true)
-            {
-                heldItem = collision.gameObject;
-                heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            }
-        }
-        else
-        {
-            canHold = false;
-            heldItem = null;
-        }
-    }
 
     private void littleMove()
 	{
@@ -108,13 +111,16 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canHold == true)
         {
             heldItem.transform.parent = transform;
-            //canHold = false;
+			Targeter = Instantiate(Arrow, playerPosition.transform.position + (playerPosition.transform.right * 2), Quaternion.Euler(new Vector3(0, 0, 90)));
+			Targeter.transform.parent = transform;
+			canHold = false;
+            
         }
         else if (Input.GetKeyDown(KeyCode.Space) && canHold == false)
         {
             heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             heldItem.transform.parent = null;
-
+			Destroy(Targeter);
         }
     }
 }
