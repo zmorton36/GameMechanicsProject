@@ -12,7 +12,9 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	private bool bigBool, littleBool, canHold;
     [SerializeField]
-    private GameObject heldItem;
+    private GameObject heldItem, Targeter, Arrow = null;
+	[SerializeField]
+	private Transform playerPosition;
     public Camera bigCam, lilCam;
     public Collider lilBro, bigBro;
 
@@ -22,6 +24,11 @@ public class PlayerControls : MonoBehaviour
 		rb = gameObject.GetComponent<Rigidbody>();
 		littleBool = true;
 		bigBool = false;
+
+		if(gameObject.tag == "BigBrother")
+		{
+			playerPosition = GetComponent<Transform>();
+		}
 		
         //Ignore collision between players
         Physics.IgnoreCollision(lilBro, bigBro);
@@ -104,6 +111,8 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canHold == true)
         {
             heldItem.transform.parent = transform;
+			Targeter = Instantiate(Arrow, playerPosition.transform.position + (playerPosition.transform.right * 2), Quaternion.Euler(new Vector3(0, 0, 90)));
+			Targeter.transform.parent = transform;
 			canHold = false;
             
         }
@@ -111,7 +120,7 @@ public class PlayerControls : MonoBehaviour
         {
             heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             heldItem.transform.parent = null;
-			
+			Destroy(Targeter);
         }
     }
 }
