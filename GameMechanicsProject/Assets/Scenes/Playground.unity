@@ -515,9 +515,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1319400947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f251125f88e784191217aa356985b5, type: 3}
+  m_Script: {fileID: 11500000, guid: cfcbb35bc9dfc7e44b8cd99011e21076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LittleWin: 0
+  BigWin: 0
 --- !u!65 &1319400949
 BoxCollider:
   m_ObjectHideFlags: 0
