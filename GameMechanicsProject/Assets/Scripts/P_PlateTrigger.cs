@@ -1,27 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class P_PlateTrigger : MonoBehaviour
 {
-
     public bool IsHere = false;
 
     [SerializeField]
-    private Animator PlateAnim;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Animator PlateAnim, OtherAnim;
 
     void OnCollisionEnter(Collision other)
     {
@@ -34,7 +18,7 @@ public class P_PlateTrigger : MonoBehaviour
             if(IsHere == true && PlateAnim.GetBool("PressureTrigger") == false)
             {
                 PlateAnim.SetBool("PressureTrigger", true);
-                
+                OtherAnim.SetBool("PlayAnim", true);
             }
             
         }
@@ -49,6 +33,7 @@ public class P_PlateTrigger : MonoBehaviour
             if(IsHere == false && PlateAnim.GetBool("PressureTrigger") == true)
             {
                 PlateAnim.SetBool("PressureTrigger", false);
+                OtherAnim.SetBool("PlayAnim", false);
             }
         }
     }
