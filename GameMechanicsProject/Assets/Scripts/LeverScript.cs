@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class LeverScript : MonoBehaviour
 {
-    [SerializeField] bool Nexttolever = false;
+    [SerializeField] private bool Nexttolever1;
+    [SerializeField] private bool Leverpressed;
+    [SerializeField] private bool Nexttolever2;
+    [SerializeField] private bool lever1pressed;
     [SerializeField] GameObject leverzone;
-    
-    [SerializeField] Animation anim;
+    [SerializeField] Animator anim;
     [SerializeField] AudioSource leversound;
     [SerializeField] GameObject Gate;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Nexttolever1 = false;
+        Nexttolever2 = false;
+        Leverpressed = false;
+        lever1pressed = false;
     }
 
     // Update is called once per frame
@@ -22,28 +27,39 @@ public class LeverScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (Nexttolever == true)
+            if (Nexttolever1 == true)
             {
-                leversound.Play();
-                Gate.transform.Translate(3, 3, 3);
-                //Current Transform.Translate values are just filler
+                if (lever1pressed == false)
+                {
+                    
+                    leversound.Play();
+                    Leverpressed = true;
+                    lever1pressed = true;
+                    anim.Play("Gate1");
+                }
+                
+               
+                
+
+                //Current Transform.Translate values are just filler, might replace with an animation
                 
                 // https://www.youtube.com/watch?v=C9W4cN5uZUw is the source sound// 
             }
         }
     }
-     void OnTriggerEnter(Collider other)
+     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "BigBrother" && other.tag == "LittleBrother")
+        if (other.tag == "BigBrother" || other.tag == "LittleBrother")
         {
-            Nexttolever = true;
+            Nexttolever1 = true;
+            Leverpressed = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "BigBrother" && other.tag == "LittleBrother")
+        if (other.tag == "BigBrother" || other.tag == "LittleBrother")
         {
-            Nexttolever = false;
+            Nexttolever1 = false;
         }
     }
 }
