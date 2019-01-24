@@ -6,8 +6,6 @@ public class LeverScript : MonoBehaviour
 {
     [SerializeField] private bool Nexttolever1;
     [SerializeField] private bool Leverpressed;
-    [SerializeField] private bool Nexttolever2;
-    [SerializeField] private bool lever1pressed;
     [SerializeField] GameObject leverzone;
     [SerializeField] Animator anim;
     [SerializeField] AudioSource leversound;
@@ -17,9 +15,9 @@ public class LeverScript : MonoBehaviour
     void Start()
     {
         Nexttolever1 = false;
-        Nexttolever2 = false;
+        
         Leverpressed = false;
-        lever1pressed = false;
+    
     }
 
     // Update is called once per frame
@@ -29,12 +27,12 @@ public class LeverScript : MonoBehaviour
         {
             if (Nexttolever1 == true)
             {
-                if (lever1pressed == false)
+                if (Leverpressed == false)
                 {
                     
                     leversound.Play();
                     Leverpressed = true;
-                    lever1pressed = true;
+                
                     anim.Play("Gate1");
                 }
                 
