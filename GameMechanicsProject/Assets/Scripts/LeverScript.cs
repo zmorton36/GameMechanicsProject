@@ -27,7 +27,7 @@ public class LeverScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (Nexttolever2 == true)
+            if (Nexttolever1 == true)
             {
                 if (lever1pressed == false)
                 {
@@ -38,12 +38,7 @@ public class LeverScript : MonoBehaviour
                     anim.Play("Gate1");
                 }
                 
-                if (lever1pressed ==)
-                {
-                    
-                    leversound.Play();
-                    anim.Play("Gate2");
-                }
+               
                 
 
                 //Current Transform.Translate values are just filler, might replace with an animation
