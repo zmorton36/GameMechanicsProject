@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	public float speed;
 	[SerializeField]
-	private bool bigBool, littleBool;
+	private bool bigBool, littleBool, isTutorial = false;
     [SerializeField]
     private GameObject heldItem, Arrow = null, launchPoint = null;
     public Camera bigCam, lilCam;
@@ -27,7 +27,14 @@ public class PlayerControls : MonoBehaviour
 		Arrow.SetActive(false);
 		
 		
-	
+		//if (littleTutorial == true)
+		//{
+		//	bigCam.gameObject.SetActive(false);
+		//}
+		//else if (bigTutorial == true)
+		//{
+		//	lilCam.gameObject.SetActive(false);
+		//}
 		
 		
         //Ignore collision between players
@@ -37,7 +44,7 @@ public class PlayerControls : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		if (Input.GetKeyDown(KeyCode.E))
+		if (Input.GetKeyDown(KeyCode.E) && isTutorial == false)
 		{
 			if (littleBool == true)
 			{
@@ -89,6 +96,8 @@ public class PlayerControls : MonoBehaviour
 		}
       
 	}
+
+	
 
 	private void OnCollisionStay(Collision collision)
 	{
