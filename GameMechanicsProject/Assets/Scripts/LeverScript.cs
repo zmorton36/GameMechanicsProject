@@ -6,7 +6,7 @@ public class LeverScript : MonoBehaviour
 {
     [SerializeField] bool Nexttolever = false;
     [SerializeField] GameObject leverzone;
-    [SerializeField] GameObject Gatetolift;
+    
     [SerializeField] Animation anim;
     [SerializeField] AudioSource leversound;
     [SerializeField] GameObject Gate;
@@ -26,6 +26,8 @@ public class LeverScript : MonoBehaviour
             {
                 leversound.Play();
                 Gate.transform.Translate(3, 3, 3);
+                //Current Transform.Translate values are just filler
+                
                 // https://www.youtube.com/watch?v=C9W4cN5uZUw is the source sound// 
             }
         }
