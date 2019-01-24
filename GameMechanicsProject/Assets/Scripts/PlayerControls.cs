@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	public float speed;
 	[SerializeField]
-	private bool bigBool, littleBool, isTutorial = false;
+	private bool bigBool, littleBool, bigTutorial = false, littleTutorial= false;
     [SerializeField]
     private GameObject heldItem, Arrow = null, launchPoint = null;
     public Camera bigCam, lilCam;
@@ -22,8 +22,22 @@ public class PlayerControls : MonoBehaviour
 	void Start()
 	{
 		rb = gameObject.GetComponent<Rigidbody>();
-		littleBool = true;
-		bigBool = false;
+		if(littleTutorial == true)
+		{
+			littleBool = true;
+			bigBool = false;
+		}
+		else if(bigTutorial == true)
+		{
+			littleBool = false;
+			bigBool = true;
+		}
+		else
+		{
+			littleBool = true;
+			bigBool = false;
+		}
+		
 		Arrow.SetActive(false);
 		
 		
@@ -44,7 +58,7 @@ public class PlayerControls : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		if (Input.GetKeyDown(KeyCode.E) && isTutorial == false)
+		if (Input.GetKeyDown(KeyCode.E) && bigTutorial == false && littleTutorial == false)
 		{
 			if (littleBool == true)
 			{
