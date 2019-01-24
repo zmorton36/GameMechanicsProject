@@ -14,8 +14,6 @@ public class PlayerControls : MonoBehaviour
 	private bool bigBool, littleBool;
     [SerializeField]
     private GameObject heldItem, Arrow = null, launchPoint = null;
-	[SerializeField]
-	private Transform playerPosition;
     public Camera bigCam, lilCam;
     public Collider lilBro, bigBro, heldCol;
 	private float trajectory;
@@ -30,7 +28,6 @@ public class PlayerControls : MonoBehaviour
 		
 		
 	
-		playerPosition = GetComponent<Transform>();
 		
 		
         //Ignore collision between players

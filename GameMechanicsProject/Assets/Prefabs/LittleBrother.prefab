@@ -146,10 +146,9 @@ MonoBehaviour:
   littleBool: 0
   heldItem: {fileID: 868256276}
   Arrow: {fileID: 868256276}
-  launchPoint: {fileID: 0}
-  playerPosition: {fileID: 0}
+  launchPoint: {fileID: 868256276}
   bigCam: {fileID: 0}
-  lilCam: {fileID: 0}
+  lilCam: {fileID: 2730343357089306178}
   lilBro: {fileID: 2730343356962375042}
   bigBro: {fileID: 0}
   heldCol: {fileID: 0}
