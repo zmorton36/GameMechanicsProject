@@ -150,7 +150,7 @@ MonoBehaviour:
   bigCam: {fileID: 0}
   lilCam: {fileID: 2730343357089306178}
   lilBro: {fileID: 2730343356962375042}
-  bigBro: {fileID: 0}
+  bigBro: {fileID: 7235481265787863784, guid: c318a6a4d860ed74784446930835a05b, type: 3}
   heldCol: {fileID: 0}
 --- !u!54 &2730343356962375046
 Rigidbody:

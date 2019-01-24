@@ -2462,6 +2462,6 @@ MonoBehaviour:
   launchPoint: {fileID: 1787476075}
   bigCam: {fileID: 1551034084}
   lilCam: {fileID: 0}
-  lilBro: {fileID: 0}
+  lilBro: {fileID: 2730343356962375042, guid: cf7eab046cc5e6f449724a1ab288bd7a, type: 3}
   bigBro: {fileID: 7235481265787863784}
   heldCol: {fileID: 0}
