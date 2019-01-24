@@ -11,9 +11,9 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField]
 	public float speed;
 	[SerializeField]
-	private bool bigBool, littleBool, canHold;
+	private bool bigBool, littleBool;
     [SerializeField]
-    private GameObject heldItem, Arrow = null;
+    private GameObject heldItem, Arrow = null, launchPoint = null;
 	[SerializeField]
 	private Transform playerPosition;
     public Camera bigCam, lilCam;
@@ -67,18 +67,7 @@ public class PlayerControls : MonoBehaviour
             bigCam.gameObject.SetActive(true);
         }
 
-		if (Input.GetKeyDown(KeyCode.Space) && canHold == false && rbItem != null)
-		{
-
-
-			heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-			rbItem.AddForce(new Vector3(trajectory * force, trajectory * force, 0));
-			heldItem.transform.parent = null;
-			Arrow.SetActive(false);
-			heldCol = null;
-			heldItem = null;
-			rbItem = null;
-		}
+		
 
 	}
 
@@ -97,7 +86,7 @@ public class PlayerControls : MonoBehaviour
 		}*/
 
 		//Checking if player is on the ground to jump
-		if (collision.gameObject.tag == "Floor")
+		if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Grabbable")
 		{
 			canJump = true;
 		}
@@ -114,14 +103,17 @@ public class PlayerControls : MonoBehaviour
 
 				heldItem = collision.gameObject;
 				heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-				if (heldItem.transform.position.x > transform.position.x) {
-					heldItem.transform.Translate(0.1f, 0, 0);
-				}
-				else {
-					heldItem.transform.Translate(-0.1f, 0, 0);
-				}
+				//if (heldItem.transform.position.x > transform.position.x)
+				//{
+				//	heldItem.transform.Translate(.65f, .5f, 0);
+				//}
+				//else
+				//{
+				//	heldItem.transform.Translate(-.65f, .5f, 0);
+				//}
 
-				heldItem.transform.parent = gameObject.transform;
+				heldItem.transform.position = launchPoint.transform.position;
+				heldItem.transform.parent = Arrow.gameObject.transform;
 				heldCol = heldItem.GetComponent<Collider>();
 				rbItem = heldItem.gameObject.GetComponent<Rigidbody>();
 				Arrow.SetActive(true);
@@ -150,13 +142,38 @@ public class PlayerControls : MonoBehaviour
 		{
 			Aim();
 		}
-    }
+
+		if (Input.GetKeyDown(KeyCode.Space) && rbItem != null)
+		{
+
+
+			heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+			if (trajectory > 0)
+			{
+				rbItem.AddForce(new Vector3(trajectory * force, trajectory * force, 0));
+			}
+			if (trajectory < 0)
+			{
+				rbItem.AddForce(new Vector3((trajectory * force), -(trajectory * force), 0));
+			}
+
+			heldItem.transform.parent = null;
+			Arrow.SetActive(false);
+			heldCol = null;
+			heldItem = null;
+			rbItem = null;
+		}
+	}
 
 	private void Aim()
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 20);
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 25);
+		}
+		if (Input.GetKey(KeyCode.S))
+		{
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * -25);
 		}
 	}
 }
