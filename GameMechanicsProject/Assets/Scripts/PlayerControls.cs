@@ -97,11 +97,6 @@ public class PlayerControls : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		/*else
-		{
-			canHold = false;
-			heldItem = null;
-		}*/
 
 		//Checking if player is on the ground to jump
 		if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Grabbable")
@@ -109,9 +104,15 @@ public class PlayerControls : MonoBehaviour
 			canJump = true;
 		}
       
+		if(collision.gameObject.tag == "Grabbable")
+		{
+			collision.gameObject.GetComponent<Rigidbody>().mass = 200;
+		}
 	}
 
 	
+
+
 
 	private void OnCollisionStay(Collision collision)
 	{
@@ -137,6 +138,10 @@ public class PlayerControls : MonoBehaviour
 				heldCol = heldItem.GetComponent<Collider>();
 				rbItem = heldItem.gameObject.GetComponent<Rigidbody>();
 				Arrow.SetActive(true);
+				if (collision.gameObject.tag == "Grabbable")
+				{
+					collision.gameObject.GetComponent<Rigidbody>().mass = 1;
+				}
 			}
 		}
 	}
