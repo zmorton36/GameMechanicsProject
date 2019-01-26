@@ -529,7 +529,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-26262
+  m_Name: pb_Mesh-3882
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -750,16 +750,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4873784302947551329, guid: c318a6a4d860ed74784446930835a05b,
-        type: 3}
-      propertyPath: lilCam
-      value: 
-      objectReference: {fileID: 655542008}
-    - target: {fileID: 4873784302947551329, guid: c318a6a4d860ed74784446930835a05b,
-        type: 3}
-      propertyPath: lilBro
-      value: 
-      objectReference: {fileID: 1493835514}
     - target: {fileID: 4873784302466830806, guid: c318a6a4d860ed74784446930835a05b,
         type: 3}
       propertyPath: m_Mesh
@@ -770,6 +760,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1912917461}
+    - target: {fileID: 4873784302947551329, guid: c318a6a4d860ed74784446930835a05b,
+        type: 3}
+      propertyPath: lilCam
+      value: 
+      objectReference: {fileID: 655542008}
+    - target: {fileID: 4873784302947551329, guid: c318a6a4d860ed74784446930835a05b,
+        type: 3}
+      propertyPath: lilBro
+      value: 
+      objectReference: {fileID: 1493835514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c318a6a4d860ed74784446930835a05b, type: 3}
 --- !u!1001 &6550785368938085563
