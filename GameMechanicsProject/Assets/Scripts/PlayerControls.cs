@@ -194,11 +194,11 @@ public class PlayerControls : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 25);
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 30);
 		}
 		if (Input.GetKey(KeyCode.S))
 		{
-			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * -25);
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * -30);
 		}
 	}
 }
