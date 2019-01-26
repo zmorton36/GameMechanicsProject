@@ -84,9 +84,6 @@ public class PlayerControls : MonoBehaviour
             lilCam.gameObject.SetActive(false);
             bigCam.gameObject.SetActive(true);
         }
-
-		
-
 	}
 
 	private void Update()
