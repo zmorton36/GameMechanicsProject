@@ -2508,14 +2508,14 @@ MonoBehaviour:
   speed: 2.5
   bigBool: 0
   littleBool: 0
-  bigTutorial: 1
+  bigTutorial: 0
   littleTutorial: 0
   heldItem: {fileID: 0}
   Arrow: {fileID: 4873784303473645312}
   launchPoint: {fileID: 4873784302500795484}
   bigCam: {fileID: 848200921}
-  lilCam: {fileID: 553402728}
-  lilBro: {fileID: 4873784303764650807}
+  lilCam: {fileID: 0}
+  lilBro: {fileID: 0}
   bigBro: {fileID: 4873784303764650807}
   heldCol: {fileID: 0}
 --- !u!1 &4873784303473645312
