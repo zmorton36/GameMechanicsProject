@@ -11,7 +11,7 @@ public class P_PlateTrigger : MonoBehaviour
     {
         IsHere = true;
 
-       if(IsHere == true && other.gameObject.tag == "Grabbable" || other.gameObject.tag == "LittleBrother" || other.gameObject.tag == "BigBrother")
+       if(IsHere == true && (other.gameObject.tag == "Grabbable" || other.gameObject.tag == "LittleBrother" || other.gameObject.tag == "BigBrother"))
         {
             
 
