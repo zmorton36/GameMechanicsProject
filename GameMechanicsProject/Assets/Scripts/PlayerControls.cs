@@ -84,9 +84,6 @@ public class PlayerControls : MonoBehaviour
             lilCam.gameObject.SetActive(false);
             bigCam.gameObject.SetActive(true);
         }
-
-		
-
 	}
 
 	private void Update()
@@ -97,11 +94,6 @@ public class PlayerControls : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		/*else
-		{
-			canHold = false;
-			heldItem = null;
-		}*/
 
 		//Checking if player is on the ground to jump
 		if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Grabbable")
@@ -109,9 +101,15 @@ public class PlayerControls : MonoBehaviour
 			canJump = true;
 		}
       
+		if(collision.gameObject.tag == "Grabbable")
+		{
+			collision.gameObject.GetComponent<Rigidbody>().mass = 200;
+		}
 	}
 
 	
+
+
 
 	private void OnCollisionStay(Collision collision)
 	{
@@ -137,6 +135,10 @@ public class PlayerControls : MonoBehaviour
 				heldCol = heldItem.GetComponent<Collider>();
 				rbItem = heldItem.gameObject.GetComponent<Rigidbody>();
 				Arrow.SetActive(true);
+				if (collision.gameObject.tag == "Grabbable")
+				{
+					collision.gameObject.GetComponent<Rigidbody>().mass = 1;
+				}
 			}
 		}
 	}
@@ -189,11 +191,11 @@ public class PlayerControls : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 25);
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * 30);
 		}
 		if (Input.GetKey(KeyCode.S))
 		{
-			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * -25);
+			Arrow.gameObject.transform.Rotate(0, 0, Time.deltaTime * -30);
 		}
 	}
 }

@@ -2,22 +2,26 @@
 
 public class LadderControls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private int speed;
+
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (Input.GetKey(KeyCode.W) && (other.gameObject.tag == "BigBrother" || other.gameObject.tag == "LittleBrother"))
+        {
+            other.attachedRigidbody.useGravity = false;
+            other.gameObject.transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+        else if(Input.GetKey(KeyCode.S) && (other.gameObject.tag == "BigBrother" || other.gameObject.tag == "LittleBrother"))
+        {
+            other.attachedRigidbody.useGravity = false;
+            other.gameObject.transform.position += Vector3.down * speed * Time.deltaTime;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        other.attachedRigidbody.useGravity = true;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
-
 }
 
