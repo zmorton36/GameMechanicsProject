@@ -844,7 +844,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154943794}
   serializedVersion: 2
-  m_Mass: 15
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -918,8 +918,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154943794}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -29.82, y: 4.74, z: 18.93}
-  m_LocalScale: {x: 2.1305807, y: 1.2853, z: 2.3937945}
+  m_LocalPosition: {x: -29.82, y: 4.7, z: 18.93}
+  m_LocalScale: {x: 1.656974, y: 1.2212406, z: 2.483007}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -1429,7 +1429,7 @@ GameObject:
   - component: {fileID: 389776480}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -1725,17 +1725,9 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 04000000
-  m_SelectedEdges:
-  - x: 16
-    y: 17
-  - x: 18
-    y: 16
-  - x: 17
-    y: 19
-  - x: 19
-    y: 18
-  m_selectedTriangles: 10000000110000001200000013000000
+  m_selectedFaces: 
+  m_SelectedEdges: []
+  m_selectedTriangles: 
 --- !u!23 &389776482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1810,7 +1802,7 @@ GameObject:
   - component: {fileID: 390887701}
   m_Layer: 0
   m_Name: Cube (11)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -2412,7 +2404,7 @@ GameObject:
   - component: {fileID: 525425271}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -4347,7 +4339,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17386
+  m_Name: pb_Mesh24586
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4676,7 +4668,7 @@ GameObject:
   - component: {fileID: 1391346686}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
