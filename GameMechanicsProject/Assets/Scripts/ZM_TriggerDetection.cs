@@ -6,6 +6,6 @@ public class ZM_TriggerDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        objectAnim.SetBool("enteredTrigger", true);
+        objectAnim.SetBool("PlayAnim", true);
     }
 }
