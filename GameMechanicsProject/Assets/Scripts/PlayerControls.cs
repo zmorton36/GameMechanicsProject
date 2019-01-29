@@ -14,7 +14,7 @@ public class PlayerControls : MonoBehaviour
 	private bool bigBool, littleBool, bigTutorial = false, littleTutorial= false;
     [SerializeField]
     private GameObject heldItem, Arrow = null, launchPoint = null;
-    public Camera bigCam, lilCam;
+    //public Camera bigCam, lilCam;
     public Collider lilBro, bigBro, heldCol;
 	private float trajectory;
 
@@ -74,15 +74,15 @@ public class PlayerControls : MonoBehaviour
 		if (littleBool && gameObject.tag == "LittleBrother")
         {
             littleMove();
-            lilCam.gameObject.SetActive(true);
-            bigCam.gameObject.SetActive(false);
+            //lilCam.gameObject.SetActive(true);
+            //bigCam.gameObject.SetActive(false);
         }
 
 		if (bigBool && gameObject.tag == "BigBrother")
         {
             bigMove();
-            lilCam.gameObject.SetActive(false);
-            bigCam.gameObject.SetActive(true);
+            //lilCam.gameObject.SetActive(false);
+            //bigCam.gameObject.SetActive(true);
         }
 	}
 
