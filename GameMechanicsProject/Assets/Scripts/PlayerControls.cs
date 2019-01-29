@@ -2,7 +2,6 @@
 
 public class PlayerControls : MonoBehaviour
 {
-	
 	private Rigidbody rb, rbItem;
 	[SerializeField]
 	private bool canJump;
@@ -17,6 +16,8 @@ public class PlayerControls : MonoBehaviour
     //public Camera bigCam, lilCam;
     public Collider lilBro, bigBro, heldCol;
 	private float trajectory;
+    public Light lilLight, bigLight;
+   
 
 	// Start is called before the first frame update
 	void Start()
@@ -39,7 +40,9 @@ public class PlayerControls : MonoBehaviour
 		}
 		
 		Arrow.SetActive(false);
-		
+
+        bigLight.gameObject.SetActive(false);
+        lilLight.gameObject.SetActive(true);
 		
 		//if (littleTutorial == true)
 		//{
@@ -64,12 +67,16 @@ public class PlayerControls : MonoBehaviour
 			{
 				littleBool = false;
 				bigBool = true;
+                bigLight.gameObject.SetActive(true);
+                lilLight.gameObject.SetActive(false);
 			}
 			else if (littleBool == false)
 			{
 				bigBool = false;
 				littleBool = true;
-			}
+                bigLight.gameObject.SetActive(false);
+                lilLight.gameObject.SetActive(true);
+            }
 		}
 		if (littleBool && gameObject.tag == "LittleBrother")
         {
