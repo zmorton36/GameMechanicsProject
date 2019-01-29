@@ -15,17 +15,19 @@ public class PauseMenu : MonoBehaviour{
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-			
+            Time.timeScale = 1f;
             if (GameIsPaused)
+
             {
 				
                 Resume();
             }
             else
             {
-				
+                
                 Pause();
             }
+            
         }
     }
 
@@ -34,6 +36,12 @@ public class PauseMenu : MonoBehaviour{
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 
     void Pause()
