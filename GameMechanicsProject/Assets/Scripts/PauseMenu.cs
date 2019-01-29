@@ -8,10 +8,7 @@ public class PauseMenu : MonoBehaviour{
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
-	private void Start()
-	{
-		Cursor.visible = false;
-	}
+	
 	// Update is called once per frame
 
 	void Update()
@@ -21,12 +18,12 @@ public class PauseMenu : MonoBehaviour{
 			
             if (GameIsPaused)
             {
-				Cursor.visible = true;
+				
                 Resume();
             }
             else
             {
-				Cursor.visible = false;
+				
                 Pause();
             }
         }
