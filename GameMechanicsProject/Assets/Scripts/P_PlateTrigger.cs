@@ -7,7 +7,7 @@ public class P_PlateTrigger : MonoBehaviour
     [SerializeField]
     private Animator PlateAnim, OtherAnim;
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionStay(Collision other)
     {
         IsHere = true;
 

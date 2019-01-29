@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1801831252077051163}
   - component: {fileID: 1801831252077051160}
   - component: {fileID: 1801831252077051161}
-  - component: {fileID: 1801831252077051157}
   - component: {fileID: 1801831252077051166}
+  - component: {fileID: 4733570867308925806}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Floor
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+  - {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
       localPivot: {x: -0.49999994, y: 0.04581195}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+    _mat: {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
     manualUV: 0
     textureGroup: -1
   - _indices: 040000000500000006000000050000000700000006000000
@@ -146,7 +146,7 @@ MonoBehaviour:
       localPivot: {x: -0.49999994, y: 0.04581195}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+    _mat: {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
     manualUV: 0
     textureGroup: -1
   - _indices: 08000000090000000a000000090000000b0000000a000000
@@ -174,7 +174,7 @@ MonoBehaviour:
       localPivot: {x: 0.49999994, y: 0.04581195}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+    _mat: {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
     manualUV: 0
     textureGroup: -1
   - _indices: 0c0000000d0000000e0000000d0000000f0000000e000000
@@ -202,7 +202,7 @@ MonoBehaviour:
       localPivot: {x: 0.49999994, y: 0.04581195}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+    _mat: {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
     manualUV: 0
     textureGroup: -1
   - _indices: 100000001100000012000000110000001300000012000000
@@ -230,7 +230,7 @@ MonoBehaviour:
       localPivot: {x: 0.49999994, y: -0.49999994}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+    _mat: {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
     manualUV: 0
     textureGroup: -1
   - _indices: 140000001500000016000000150000001700000016000000
@@ -258,7 +258,7 @@ MonoBehaviour:
       localPivot: {x: -0.49999994, y: -0.49999994}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 592e462ceacfa06429d5e34e4c12a802, type: 2}
+    _mat: {fileID: 2100000, guid: 2c19a4d8f3aa37b45be5a259c66578e1, type: 2}
     manualUV: 0
     textureGroup: -1
   _sharedIndices:
@@ -360,7 +360,20 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!114 &1801831252077051157
+--- !u!65 &1801831252077051166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801831252077051167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9763113, y: 0.08945346, z: 0.9763113}
+  m_Center: {x: 0.49999994, y: 0.04581195, z: -0.49999994}
+--- !u!114 &4733570867308925806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,19 +388,6 @@ MonoBehaviour:
   IsHere: 0
   PlateAnim: {fileID: 1801831253036055476}
   OtherAnim: {fileID: 0}
---- !u!65 &1801831252077051166
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801831252077051167}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9763113, y: 0.08945346, z: 0.9763113}
-  m_Center: {x: 0.49999994, y: 0.04581195, z: -0.49999994}
 --- !u!1 &1801831252294216100
 GameObject:
   m_ObjectHideFlags: 0
