@@ -924,7 +924,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13050
+  m_Name: pb_Mesh25532
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1634,7 +1634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13024
+  m_Name: pb_Mesh25504
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2267,7 +2267,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390887700}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd6f9c049c65c15468ca35c03fcdf27e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2939,7 +2939,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18202
+  m_Name: pb_Mesh25438
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3541,7 +3541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10168
+  m_Name: pb_Mesh25426
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4474,7 +4474,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669680798}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd6f9c049c65c15468ca35c03fcdf27e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4834,7 +4834,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13068
+  m_Name: pb_Mesh25552
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6743,7 +6743,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh12030
+  m_Name: pb_Mesh25366
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7090,7 +7090,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391346685}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd6f9c049c65c15468ca35c03fcdf27e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -8270,7 +8270,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh12946
+  m_Name: pb_Mesh25398
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9058,7 +9058,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh12930
+  m_Name: pb_Mesh25378
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
