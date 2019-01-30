@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Arrow
+  m_Name: Portal
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.013483422, g: 0.9086787, b: 0.9528302, a: 0.65882355}
-    - _EmissionColor: {r: 0.052860655, g: 0.637597, b: 0.8069525, a: 1}
+    - _Color: {r: 0.7254902, g: 0.427451, b: 1, a: 0.65882355}
+    - _EmissionColor: {r: 0.46207705, g: 0.1559265, b: 0.93011117, a: 1}
