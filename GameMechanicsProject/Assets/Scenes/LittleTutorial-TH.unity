@@ -1632,6 +1632,11 @@ PrefabInstance:
       propertyPath: jump
       value: 475
       objectReference: {fileID: 0}
+    - target: {fileID: 6550785368453304927, guid: cf7eab046cc5e6f449724a1ab288bd7a,
+        type: 3}
+      propertyPath: bigLight
+      value: 
+      objectReference: {fileID: 203520826}
     - target: {fileID: 6550785367584216346, guid: cf7eab046cc5e6f449724a1ab288bd7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1679,6 +1684,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7eab046cc5e6f449724a1ab288bd7a, type: 3}
+--- !u!108 &203520826 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 809386758, guid: cf7eab046cc5e6f449724a1ab288bd7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 203520825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &239206460
 PrefabInstance:
   m_ObjectHideFlags: 0
