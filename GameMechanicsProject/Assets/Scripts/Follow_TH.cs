@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Follow_TH : MonoBehaviour
 {
@@ -19,8 +17,9 @@ public class Follow_TH : MonoBehaviour
 		littleCam = true;
 		bigCam = false;
 	}
+
 	// Update is called once per frame
-	void FixedUpdate()
+	void Update()
     {
 		if (Input.GetKeyDown(KeyCode.E))
 		{
